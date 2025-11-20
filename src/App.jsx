@@ -1,71 +1,42 @@
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Trending from './components/Trending'
+import Genres from './components/Genres'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="min-h-screen bg-slate-950 relative">
+      {/* Pattern and stars */}
+      <div className="absolute inset-0 bg-[radial-gradient(50%_50%_at_50%_0%,rgba(15,23,42,0)_0%,rgba(15,23,42,1)_60%),url('data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='2' cy='2' r='1'/%3E%3Ccircle cx='40' cy='80' r='1'/%3E%3Ccircle cx='90' cy='20' r='1'/%3E%3Ccircle cx='70' cy='60' r='1'/%3E%3C/g%3E%3C/svg%3E')]" />
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
+      <Navbar />
+      <main>
+        <Hero />
+        <Trending />
+        <Genres />
 
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
+        {/* CTA */}
+        <section className="py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-800 p-8 sm:p-12">
+              <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_100%_0%,rgba(168,85,247,0.25),transparent_60%)]" />
+              <div className="relative z-10 flex flex-col lg:flex-row items-center gap-8 justify-between">
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white">Join the community</h3>
+                  <p className="mt-2 text-slate-300/90 max-w-xl">Create your profile, track your library, and squad up with players who love the same games you do.</p>
+                </div>
+                <a href="#" className="px-6 py-3 rounded-xl bg-gradient-to-r from-fuchsia-600 to-blue-600 text-white font-semibold shadow-lg shadow-fuchsia-500/20 hover:shadow-fuchsia-500/30 transition">Get started</a>
               </div>
             </div>
           </div>
+        </section>
+      </main>
 
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
-          </div>
+      <footer className="py-10 border-t border-white/10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-slate-400 text-sm">© {new Date().getFullYear()} PlayForge. All rights reserved.</p>
         </div>
-      </div>
+      </footer>
     </div>
   )
 }
